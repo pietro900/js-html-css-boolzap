@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    background-color: #e5ddd5;
+    position: relative;
+}
+
+.fascia_verde{
+    background-color: #1b9a59;
+    height: 150px;
+}
+
+.container{
+    height: 90vh;
+    width: 80%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+}
+
+aside{
+    width: 30%;
+    background-color: green;
+}
+
+main{
+    width: 70%;
+    background-color: blue;
+}

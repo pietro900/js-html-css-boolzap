@@ -5,20 +5,20 @@
 }
 
 body{
-    background-color: #e5ddd5;
+    background-color: rgba(210,219,219,1);
     position: relative;
 }
 
 .fascia_verde{
-    background-color: #1b9a59;
-    height: 150px;
+    background-color: #009688;;
+    height: 100px;
 }
 
 .container{
     height: 90vh;
     width: 80%;
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%);
     display: flex;
@@ -29,7 +29,124 @@ aside{
     background-color: green;
 }
 
+.top_asaide{
+    height: 18%;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    background-color: #ededed;
+    height: 46px;
+}
+
+span{
+    display: inline-block;
+    margin: 3px 0 0 10px;
+    height: 35px;
+    width: 35px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.menu ul,
+.menu li{
+    display: inline-block;
+    padding: 6px 11px;
+    font-size: 21px;
+
+}
+
+.utente{
+    display: flex;
+}
+
+.img_utente{
+    background-color: yellow;
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+i{
+    color: #919191;
+    font-size: 15px;
+}
+
+.notifiche{
+    height: calc(100% - 46px);
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+}
+
+.icona{
+    color: #9de1fe;
+    background-color: #f5fcff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border: 1px solid #9de1fe;
+    border-radius: 50%;
+    margin: 0 10px 0 15px;
+}
+
+.notifiche p,
+.notifiche a{
+    font-size: 13px;
+}
+
+.bot_asaide{
+    height: 82%;
+}
+
+.bt_as_top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 46px;
+    background-color: #ededed;
+}
+
+.input{
+    height: 80%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+}
+
+.input i{
+    padding-right: 10px;
+}
+
+.input input{
+    width: 80%;
+    height: 75%;
+    font-size: 18px;
+    border: 0;
+    outline: none;
+}
+/*fine aside*/
+
 main{
     width: 70%;
     background-color: blue;
+}
+
+.messaggi{
+    height: calc(100% - 92px);
+    overflow-y: scroll;
+    background: url(https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png);
+}
+
+.bt_as_top > i{
+    font-size: 20px;
+    padding: 10px;
 }

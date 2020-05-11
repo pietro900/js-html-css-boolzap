@@ -15,10 +15,10 @@ body{
 }
 
 .container{
-    height: 90vh;
+    height: 660px;
     width: 80%;
     position: absolute;
-    top: 20%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%);
     display: flex;
@@ -26,7 +26,7 @@ body{
 
 aside{
     width: 30%;
-    background-color: green;
+    background-color: white;
 }
 
 .top_asaide{
@@ -40,15 +40,6 @@ aside{
     height: 46px;
 }
 
-span{
-    display: inline-block;
-    margin: 3px 0 0 10px;
-    height: 35px;
-    width: 35px;
-    background-color: red;
-    border-radius: 50%;
-}
-
 .menu ul,
 .menu li{
     display: inline-block;
@@ -59,14 +50,19 @@ span{
 
 .utente{
     display: flex;
+    padding: 5px;
 }
 
 .img_utente{
     background-color: yellow;
-    width: 36px;
-    height: 36px;
+    width: 33px;
+    height: 33px;
     object-fit: contain;
     border-radius: 50%;
+}
+
+.menu .img_utente{
+    margin: 0 20px 0 5px;
 }
 
 i{
@@ -75,7 +71,7 @@ i{
 }
 
 .notifiche{
-    height: calc(100% - 46px);
+    height: 73px;
     background-color: lightblue;
     display: flex;
     align-items: center;
@@ -123,7 +119,7 @@ i{
 }
 
 .input i{
-    padding-right: 10px;
+    padding: 0 10px 0 5px;
 }
 
 .input input{
@@ -133,20 +129,70 @@ i{
     border: 0;
     outline: none;
 }
+
+.contatti{
+    height: calc(100% - 46px);
+    overflow: scroll;
+}
+
+.contatti .utente{
+    padding: 11px;
+}
+
+.contatti .img_utente{
+    margin-right: 15px;
+}
 /*fine aside*/
 
 main{
     width: 70%;
-    background-color: blue;
 }
 
 .messaggi{
     height: calc(100% - 92px);
     overflow-y: scroll;
     background: url(https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png);
+    padding: 20px;
+}
+
+.container_messaggi{
+    margin-top: 15px;
+    position: relative;
+}
+
+.inviato,
+.ricevuto{
+    clear: both;
+    background-color: white;
+    padding: 10px;
+    border-radius: 7.5px;
+}
+
+.ricevuto{
+    float: left;
+}
+
+.inviato{
+    float: right;
+}
+
+.span{
+    position: absolute;
+    top: 0px;
+    left: -10px;
+    border-top: 15px solid white;
+    border-left: 15px solid rgba(0,0,0,0);
 }
 
 .bt_as_top > i{
     font-size: 20px;
-    padding: 10px;
+    padding: 12px;
+}
+
+#larghezza{
+    width: 95%;
+}
+
+.tamplate{
+    display: none;
 }

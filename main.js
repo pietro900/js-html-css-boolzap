@@ -1,39 +1,29 @@
 //scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite;
 
 //inserisco il click sul imput;
-$('#lname').focus(function() {
+$('#ricerca').focus(function() {
     //che mi nasconde la lista utenti
     $('.utente').hide();
 });
 
-//intercetto il click sull'icona;
-$('.fa-search').click(function() {
-    //leggo cio che ha scritto l'utente;
-     var testodiricerca = $('#lname').val();
+//intercetto il focus sull'imput
+$('#ricerca').keyup(function() {
+    //leggo cio che ha scritto l'utente nell'imput;
+     var testodiricerca = $('#ricerca').val().trim().toLowerCase();
 
-    //per ogni parola inserita la confronto con i contatti;
+    //recupero il testo per ogni h1;
     $('h1').each(function() {
-        //recupero il testo in h1;
+        var nomecontatto = $(this).text().toLowerCase();
 
-        var nomecontatto = $(this).text(testodiricerca);
+        // confronto cio che a scritto l'utente con i contatti;
         //se è uguale visualizzo;
-        if (nomecontatto == testodiricerca) {
-
-            $(this).show();
-            console.log(ok);
-        }
-
-        //altrimenti nascondo;
-        else {
-            $(this).hide();
-            console.log(66);
-        }
-
+        if (nomecontatto.includes(testodiricerca)) {
+               $(this).parents('.utente').show()
+           } else {
+               $(this).parents('.utente').hide()
+           }
     });
 });
-
-
-
 
 //imposto un click sull'imput per far visualizzare il pulsate invio e far sparire il pulsante del microfono;
 $('#larghezza').click(function() {
@@ -41,10 +31,6 @@ $('#larghezza').click(function() {
     $('.fa-microphone').hide();
 });
 
-// $('#larghezza').blur(function() {
-//     $('.fa-paper-plane').hide();
-//     $('.fa-microphone').show();
-// });
 
 //intercetto il click sul pulsante invio;
 $('.fa-paper-plane').click(function() {

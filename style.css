@@ -48,6 +48,10 @@ aside{
 
 }
 
+.dimensione{
+    width: 400px;
+}
+
 .utente{
     display: flex;
     padding: 5px;
@@ -90,6 +94,7 @@ i{
     margin: 0 10px 0 15px;
 }
 
+.notifiche h3,
 .notifiche p,
 .notifiche a{
     font-size: 13px;
@@ -153,11 +158,23 @@ main{
     overflow-y: scroll;
     background: url(https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png);
     padding: 20px;
+    display: none;
 }
 
-.container_messaggi{
+.active{
+    display: block;
+}
+
+.container_messaggi {
     margin-top: 15px;
     position: relative;
+
+}
+
+.container_messaggi::after{
+    content:'';
+    clear: both;
+    display: table;
 }
 
 .inviato,
@@ -179,10 +196,20 @@ main{
 .span{
     position: absolute;
     top: 0px;
+}
+
+.sinistra{
     left: -10px;
     border-top: 15px solid white;
     border-left: 15px solid rgba(0,0,0,0);
 }
+
+.destra{
+    right: -10px;
+    border-top: 15px solid white;
+    border-right: 15px solid rgba(0,0,0,0);
+}
+
 
 .bt_as_top > i{
     font-size: 20px;

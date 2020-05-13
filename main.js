@@ -1,34 +1,51 @@
-//scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite;
+//intercetto il click sull' untente selezionato;
+$('.utente').click(function(){
 
-//inserisco il click sul imput;
-$('#ricerca').focus(function() {
-    //che mi nasconde la lista utenti
-    $('.utente').hide();
-});
+    //individuo l'indice dell'utente selezionato;
+    var  index_contatti = $(this).index('.utente');
+    //trovo in nome dell'utente selezionato
+    var nome_utente = $(this).find('h3').text()
+    console.log(index_contatti);
+    console.log(nome_utente);
+    //uso l'indice per associarlo ad un chat di messaggi;
+    var index_messaggi = $('.messaggi').eq(index_contatti);
+    //scrivo il nome dell'utente;
+    $('h4').text(nome_utente)
+    console.log(index_messaggi);
+
+    //rimuovo a tutte le chat la classe active, cosi da nasconderle a tutte
+    $('.messaggi').removeClass('active')
+    //rimetto la classe active alla chat corrispondente all'indice;
+    $(index_messaggi).addClass('active')
+})
 
 //intercetto il focus sull'imput
 $('#ricerca').keyup(function() {
     //leggo cio che ha scritto l'utente nell'imput;
      var testodiricerca = $('#ricerca').val().trim().toLowerCase();
 
-    //recupero il testo per ogni h1;
-    $('h1').each(function() {
-        var nomecontatto = $(this).text().toLowerCase();
+    if ( testodiricerca != '') {
+        //recupero il testo per ogni h1;
+        $('h3').each(function() {
+            var nomecontatto = $(this).text().toLowerCase();
 
-        // confronto cio che a scritto l'utente con i contatti;
-        //se è uguale visualizzo;
-        if (nomecontatto.includes(testodiricerca)) {
-               $(this).parents('.utente').show()
-           } else {
-               $(this).parents('.utente').hide()
-           }
-    });
+            // confronto cio che a scritto l'utente con i contatti;
+            //se è uguale visualizzo;
+            if (nomecontatto.includes(testodiricerca)) {
+                   $(this).parents('.utente').show();
+               } else {
+                   $(this).parents('.utente').hide();
+               }
+           })
+       } else {
+           $('.utente').show();
+        }
 });
 
 //imposto un click sull'imput per far visualizzare il pulsate invio e far sparire il pulsante del microfono;
 $('#larghezza').click(function() {
-    $('.fa-paper-plane').show();
-    $('.fa-microphone').hide();
+        $('.fa-paper-plane').show();
+        $('.fa-microphone').hide();
 });
 
 
@@ -61,16 +78,15 @@ function messaggio() {
         nuovo_testo.find('p').text(testo_inserito);
 
         //appendo il nuovo testo;
-        $('.messaggi').append(nuovo_testo);
+        $('.active').append(nuovo_testo);
 
         //ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.;
 
-        var clock = setInterval(rispostamessaggio, 1000);
+        var clock = setTimeout(rispostamessaggio, 1000);
 
         function rispostamessaggio() {
             var nuovo_testo = $('.tamplate2 .container_messaggi').clone();
-            $('.messaggi').append(nuovo_testo);
-            clearInterval(clock);
+            $('.active').append(nuovo_testo);
             }
         };
 };

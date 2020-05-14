@@ -52,6 +52,7 @@ aside{
     width: 400px;
 }
 
+.utente1,
 .utente{
     display: flex;
     padding: 5px;
@@ -177,12 +178,18 @@ main{
     display: table;
 }
 
+.container_messaggi:hover .fa-angle-down{
+    display: inline-block;
+}
+
 .inviato,
 .ricevuto{
     clear: both;
     background-color: white;
     padding: 10px;
     border-radius: 7.5px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .ricevuto{
@@ -196,6 +203,23 @@ main{
 .span{
     position: absolute;
     top: 0px;
+}
+
+.fa-angle-down{
+    display: none;
+    padding-left: 3px;
+    opacity: 0.4;
+    float: right;
+}
+
+.dropdown{
+    font-size: 14px;
+    bottom: -24px;
+    padding: 10px;
+    background-color: white;
+    list-style-type: none;
+    height: 50px;
+    display: none;
 }
 
 .sinistra{

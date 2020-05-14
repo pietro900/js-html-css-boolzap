@@ -58,6 +58,10 @@ aside{
     padding: 5px;
 }
 
+.utente_hover{
+    background-color: rgba(210,219,219,1);
+}
+
 .img_utente{
     background-color: lightgreen;
     width: 33px;
@@ -167,7 +171,7 @@ main{
 }
 
 .container_messaggi {
-    margin-top: 15px;
+    margin-top: 25px;
     position: relative;
 
 }
@@ -178,7 +182,8 @@ main{
     display: table;
 }
 
-.container_messaggi:hover .fa-angle-down{
+.inviato:hover .fa-angle-down,
+.ricevuto:hover .fa-angle-down{
     display: inline-block;
 }
 
@@ -213,6 +218,7 @@ main{
 }
 
 .dropdown{
+    position: absolute;
     font-size: 14px;
     bottom: -24px;
     padding: 10px;
@@ -220,6 +226,16 @@ main{
     list-style-type: none;
     height: 50px;
     display: none;
+}
+
+.dropdown-sinistra{
+    top: 20px;
+    left: 10px;
+}
+
+.dropdown-destra{
+    top: 20px;
+    right: 10px;
 }
 
 .sinistra{

@@ -1,7 +1,13 @@
+
+$(document).on('click','.cancella_messaggio', function() {
+    $(this).closest('.container_messaggi').remove();
+});
+
 //intercetto il click sull'icona del dropdowen;
-$('.fa-angle-down').click(function () {
+$(document).on('click','.fa-angle-down', function(){
     //recupero il tag ul con classe dropdown che è suo fratello
     var sottomenu = $(this).next('.dropdown');
+    console.log(sottomenu);
     //valuto se l'elemento su cui ho cliccato ha gia il dropdawn aperto;
     if(sottomenu.is(':visible')){
         //se si allora ho cliccato lastessa voce per chiuderlo;
@@ -13,7 +19,12 @@ $('.fa-angle-down').click(function () {
         //visuallizzo il menu dropdown
         sottomenu.show();
     }
-})
+});
+
+//quando esco con il mouse chiudo un dopdowen aperto
+$(document).on('mouseleave','.dropdown', function() {
+    $(this).hide();
+});
 
 
 //intercetto il click sull' untente selezionato;
@@ -33,9 +44,11 @@ $('.utente').click(function(){
 
     //rimuovo a tutte le chat la classe active, cosi da nasconderle a tutte
     $('.messaggi').removeClass('active')
+    $('.utente').removeClass('utente_hover')
     //rimetto la classe active alla chat corrispondente all'indice;
     $(index_messaggi).addClass('active')
-})
+    $(this).addClass('utente_hover')
+});
 
 //intercetto il focus sull'imput
 $('#ricerca').keyup(function() {
